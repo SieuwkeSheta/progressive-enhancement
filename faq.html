@@ -50,6 +50,27 @@
 				&:nth-of-type(3) p{
 					background-color: #fffc86;
 				}
+
+				/* Icon voor het openen en sluiten */
+				& summary::marker {
+					content:"";
+				}
+
+				& summary::before {
+					display: inline-block;
+					vertical-align: middle;
+					line-height: 20px;
+					content: url(/assets/plus-icon.svg);
+					scale: 0.8;
+					padding-right: 0.3em;
+					transition: all 0.15s ease-in-out;
+					transform-origin: center;
+				}
+
+				&[open] summary::before {
+					transform: rotate(45deg);
+				}
+			}
 		</style>
 	</head>
 	<body>
