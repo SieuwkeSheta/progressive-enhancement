@@ -8,19 +8,48 @@
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
 			/* Schrijf hier gewoon je CSS voor dit component */
-
 			.ui-component {
-				padding: 1em;
-				width: 40em;
+				width: fit-content;
 				margin-bottom: 1em;
 				border: 2px solid black;
 				border-radius: 10px;
 				cursor: pointer;
-			}
 
-			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
+				/* Als [open] wordt ondersteund */
+				&[open] {
+					border:2px solid transparent;
+				}
 
-			/* Hint: Denk aan de states van het component; deze kan open en dicht zijn */
+				summary, p {
+					width: fit-content;
+					padding: 1em;
+					margin: 0;
+					border-radius: 10px;
+					outline-offset: 0.25em;
+				}
+
+				&[open] summary {
+					border-radius: 10px 10px 0 0;
+				}
+				
+				p {
+					border-radius: 0 10px 10px 10px;
+				}
+
+				&:nth-of-type(1)[open] summary, 
+				&:nth-of-type(1) p {
+					background-color: #a675f5;	
+				}
+
+				&:nth-of-type(2)[open] summary, 
+				&:nth-of-type(2) p{
+					background-color: #66e5bf;
+				}
+
+				&:nth-of-type(3)[open] summary, 
+				&:nth-of-type(3) p{
+					background-color: #fffc86;
+				}
 		</style>
 	</head>
 	<body>
