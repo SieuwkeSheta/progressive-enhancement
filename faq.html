@@ -32,23 +32,24 @@
 					border-radius: 10px 10px 0 0;
 				}
 				
-				p {
+				&::details-content {
 					border-radius: 0 10px 10px 10px;
 				}
 
-				&:nth-of-type(1)[open] summary, 
-				&:nth-of-type(1) p {
-					background-color: #a675f5;	
+				&:nth-of-type(3n + 1)[open] {
+					--background-color: #a675f5;	
 				}
 
-				&:nth-of-type(2)[open] summary, 
-				&:nth-of-type(2) p{
-					background-color: #66e5bf;
+				&:nth-of-type(3n + 2)[open] {
+					--background-color: #66e5bf;
 				}
 
-				&:nth-of-type(3)[open] summary, 
-				&:nth-of-type(3) p{
-					background-color: #fffc86;
+				&:nth-of-type(3n + 3)[open] {
+					--background-color: #fffc86;
+				}
+
+				summary, &::details-content {
+					background-color: var(--background-color);
 				}
 
 				/* Icon voor het openen en sluiten */
@@ -60,7 +61,7 @@
 					display: inline-block;
 					vertical-align: middle;
 					line-height: 20px;
-					content: url("assets/plus-icon.svg");
+					content: url('assets/plus-icon.svg');
 					scale: 0.8;
 					padding-right: 0.3em;
 					transition: all 0.15s ease-in-out;
