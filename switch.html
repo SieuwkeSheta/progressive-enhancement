@@ -9,9 +9,54 @@
 		<style>
 			/* Schrijf hier gewoon je CSS voor dit component */
 
-			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
+			/* Gebruik enhanced CSS als het pseudo-element '::after' wordt ondersteund */
+			@supports selector(::after) {
 
-			/* Hint: Hoe ver ga je qua styling? Vraag jezelf dit altijd af */
+				input[type="checkbox"] {
+					/* Om de styling volledig aan te passen */
+					appearance:none;
+					
+					/* Styling van achtergrond balk */
+					background-color:grey;
+					border-radius:1.8em;
+					width:7em;
+					padding: 0.3em;
+
+					cursor:pointer;
+					font-weight: 700;
+
+					/* Achtergrond balk veranderd van kleur bij het aanzetten */
+					&:checked {
+						background-color:var(--green);
+					}
+
+					&::after {
+						content:"aan";
+						display:flex;
+						justify-content: center;
+						align-items: center;
+
+						/* Styling van het bolletje */
+						width:3em;
+						aspect-ratio:1;
+						background-color:white;
+						border-radius:inherit;
+						
+						/* Om de content tekst onzichtbaar te maken */
+						color: transparent;
+
+						transition:.3s;
+					}
+
+					&:checked::after {
+						/* Om het bolletje te bewegen */
+						translate:3.4em;
+
+						/* Om de content tekst zichtbaar te maken */
+						color: black;
+					}
+				}
+			}
 		</style>
 	</head>
 	<body>
