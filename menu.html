@@ -96,8 +96,27 @@
 		</style>
 		<script type="module">
 			/* Schrijf hier eventueel je client-side JavaScript */
-
 			/* Hint: dit component kan volledig met CSS, maar met JS kun je 'm enhancen */
+
+			// Stap 1: Selecteer de body en de open en sluit knoppen
+			const openButton = document.querySelector('.open-button')
+			const closeButton = document.querySelector('.close-button')
+			const body = document.body
+
+			// Stap 2: Wacht tot op elke knop gedrukt wordt
+			openButton.addEventListener('click', addClass)
+			closeButton.addEventListener('click', removeClass)
+
+			function addClass() {
+				// Stap 3: Voeg een class toe als er op de 'open' knop gedrukt is 
+				body.classList.add('menu-is-open')
+			}
+
+			function removeClass() {
+				// Stap 4: Verwijder de class als er op de 'sluit' knop gedrukt is 
+				body.classList.remove('menu-is-open')
+			}
+			
 		</script>
 	</head>
 	<body>
