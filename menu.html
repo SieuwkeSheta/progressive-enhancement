@@ -11,6 +11,27 @@
 
 			/* Hint: kijk eens naar :target
 			   https://developer.mozilla.org/en-US/docs/Web/CSS/:target */
+			   
+			body {
+				transform: none;
+  				transition: transform 0.3s ease;
+			}
+
+			p {
+  				transition: transform 0.3s ease;
+				transform-origin: right;
+			}
+
+			/* Veranderd de body als JS gebruikt kan worden */
+			body.menu-is-open {
+				background-color: grey;
+			}
+
+			/* Veranderd de 'p's in de body als JS gebruikt kan worden */
+			body.menu-is-open p {
+				transform: scaleX(0.9);
+			}
+			
 			/* Menu-link om lijst met menu items te openen */
 			.open-button {
 				padding: 0.3em 0.5em;
