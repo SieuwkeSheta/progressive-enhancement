@@ -11,6 +11,67 @@
 
 			/* Hint: kijk eens naar :target
 			   https://developer.mozilla.org/en-US/docs/Web/CSS/:target */
+			/* Menu-link om lijst met menu items te openen */
+			.open-button {
+				padding: 0.3em 0.5em;
+				background-color: #050542;
+				color: #66E5BF;
+				text-decoration: none;
+				border-radius: 10px;
+			}
+
+			/* Lijst met menu items */
+			ul {
+				position: absolute;
+				top: 0;
+				translate: -105%;
+				display: grid;
+				align-content: start;		
+
+				margin: -8px;
+				padding: 0.5em 0;
+				height: 100dvh;
+				list-style-type: none;
+				background-color: #66E5BF;
+
+				transition: 0.3s ;
+				z-index: 10;
+			}
+
+			/* Menu-link om lijst met menu items te sluiten */
+			ul li:nth-of-type(1) {
+				justify-self: end;
+			}
+
+			ul li:nth-of-type(1) a:hover, 
+			ul li:nth-of-type(1) a:focus {
+				background-color: #66E5BF;
+			}
+
+			ul li svg {
+				display: block;
+			}
+
+			/* Losse menu items */
+			ul li a {
+				display: block;
+				padding: 1em;
+				color: #050542;
+				font-weight: 700;
+				text-decoration: none;
+			}
+
+			ul li a:hover,
+			ul li a:focus {
+				background-color: #050542;
+				color: #66E5BF;
+			}
+
+			/* Laat de lijst met menu items zien als er op de 'open' menu-link klinkt is */
+			:target {
+				translate: 0;
+			}
+			
 		</style>
 		<script type="module">
 			/* Schrijf hier eventueel je client-side JavaScript */
